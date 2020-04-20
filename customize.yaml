@@ -1,0 +1,58 @@
+  light.floor_lamp:
+    icon: mdi:floor-lamp
+  light.bedroom_ceiling:
+    icon: mdi:ceiling-light
+  light.ledvance_br30_rgbw_0007562f_1:
+    friendly_name: Master Bath
+    icon: mdi:ceiling-light
+  light.ledvance_br30_rgbw_000640b1_1:
+    friendly_name: Entryway
+    icon: mdi:door
+  light.ledvance_br30_rgbw_00065839_1:
+    friendly_name: Stairs 1
+    icon: mdi:stairs
+  light.ledvance_br30_rgbw_00064bab_1:
+    friendly_name: Stairs 2
+    icon: mdi:stairs
+  light.ledvance_br30_rgbw_000659dc_1:
+    friendly_name: Hall 1
+    icon: mdi:ceiling-light
+  light.ledvance_br30_rgbw_00064116_1:
+    friendly_name: Hall 2
+    icon: mdi:ceiling-light
+  light.zooz_zen22_dimmer_v2_level:
+    friendly_name: Chandelier
+    icon: mdi:ceiling-light
+  light.dimmable_light_1:
+    friendly_name: Front Porch
+    icon: mdi:coach-lamp
+  light.ledvance_br30_rgbw_00063e13_1:
+    friendly_name: Kitchen 1
+    icon: mdi:ceiling-light
+  light.ledvance_br30_rgbw_00063e70_1:
+    friendly_name: Kitchen 2
+    icon: mdi:ceiling-light
+  light.ledvance_br30_rgbw_00064602_1:
+    friendly_name: Kitchen 3
+    icon: mdi:ceiling-light
+  light.ledvance_br30_rgbw_00065862_1:
+    friendly_name: Kitchen 4
+    icon: mdi:ceiling-light
+  light.kitchenette_1:
+    icon: mdi:ceiling-light
+  light.kitchenette_2:
+    icon: mdi:ceiling-light
+  light.kitchen_group:
+    friendly_name: Kitchen
+  light.batcave_group:
+    friendly_name: Bat Cave
+  light.downstairs_group:
+    friendly_name: Downstairs
+  light.hall_group:
+    friendly_name: Hall
+  light.lr_group:
+    friendly_name: Living Room
+  light.fm_group:
+    friendly_name: Family Room
+  light.bedroom_group:
+    friendly_name: Master Bedroom

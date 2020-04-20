@@ -1,0 +1,85 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+
+homeassistant:
+  customize: !include customize.yaml
+
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+remote:
+  - platform: harmony
+    name: LivingRoom
+    host: 10.0.1.220
+
+light:
+  - platform: group
+    name: kitchen_group
+    entities:
+      - light.ledvance_br30_rgbw_703e0600_level_light_color_on_off
+      - light.ledvance_br30_rgbw_02460600_level_light_color_on_off
+      - light.ledvance_br30_rgbw_62580600_level_light_color_on_off
+      - light.ledvance_br30_rgbw_133e0600_level_light_color_on_off
+      - light.kitchenette_1
+      - light.kitchenette_2
+  - platform: group
+    name: hall_group
+    entities:
+      - light.ledvance_br30_rgbw_dc590600_level_light_color_on_off
+      - light.ledvance_br30_rgbw_16410600_level_light_color_on_off
+  - platform: group
+    name: lr_group
+    entities:
+      - light.ledvance_br30_rgbw_b1400600_level_light_color_on_off
+      - light.ledvance_br30_rgbw_39580600_level_light_color_on_off
+      - light.ledvance_br30_rgbw_ab4b0600_level_light_color_on_off
+  - platform: group
+    name: fm_group
+    entities:
+      - light.osram_lightify_flex_rgbw_7ec7a400_level_light_color_on_off
+      - light.family_lamp
+  - platform: group
+    name: downstairs_group
+    entities:
+      - light.hall_group
+      - light.kitchen_group
+      - light.lr_group
+      - light.fm_group
+      - light.office_ceiling
+  - platform: group
+    name: batcave_group
+    entities:
+      - light.cree_connected_a_19_60w_equivalent_0a720afe_level_on_off
+      - light.cree_connected_a_19_60w_equivalent_c5580afe_level_on_off
+  - platform: group
+    name: bedroom_group
+    entities:
+      - light.bedroom_ceiling
+      - light.floor_lamp
+      - light.ledvance_br30_rgbw_2f560700_level_light_color_on_off
+
+input_boolean:
+  hall_motion_detect:
+    name: Hall Motion Detected
+    initial: off
+  lr_motion_detect:
+    name: Living Room Motion Detected
+    initial: off
+  kitchen_motion_detect:
+    name: Kitchen Motion Detected
+    initial: off
+  dr_motion_detect:
+    name: Dining Motion Detected
+    initial: off

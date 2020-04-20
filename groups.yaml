@@ -1,0 +1,14 @@
+  DownColor:
+    name: Downstairs Color
+    entities:
+      - light.ledvance_br30_rgbw_000640b1_1
+      - light.ledvance_br30_rgbw_00065839_1
+      - light.ledvance_br30_rgbw_00064bab_1
+      - light.ledvance_br30_rgbw_000659dc_1
+      - light.ledvance_br30_rgbw_00064116_1
+      - light.kitchenette_1
+      - light.kitchenette_2
+      - light.ledvance_br30_rgbw_00063e13_1
+      - light.ledvance_br30_rgbw_00063e70_1
+      - light.ledvance_br30_rgbw_00064602_1
+      - light.ledvance_br30_rgbw_00065862_1

@@ -1,0 +1,40 @@
+  - name: downbright
+    entities:
+      group.downcolor:
+        brightness: 255
+        kelvin: 2700
+        state: on
+        transition: 5
+      light.zooz_zen22_dimmer_v2_level:
+        state: on
+        brightness: 255
+        transition: 5
+  - name: Random
+    entities:
+      light.ledvance_br30_rgbw_000659dc_1:
+        state: on
+        brightness: 255
+        rgb_color: ['{{ (range(0, 255)|random) }}','{{ (range(0, 255)|random) }}','{{ (range(0, 255)|random) }}']
+  - name: Loop
+    entities:
+      group.downcolor:
+        state: on
+        effect: colorloop
+        brightness: 255
+  - name: Nightlight
+    entities:
+      group.downcolor:
+        brightness: 1
+        kelvin: 1500
+        state: on
+  - name: All_Off
+    entities:
+      light.zooz_zen22_dimmer_v2_level:
+        state: off
+        transition: 5
+      group.downcolor:
+        state: off
+        transition: 5
+      light.bedroom:
+        state: off
+        transition: 5

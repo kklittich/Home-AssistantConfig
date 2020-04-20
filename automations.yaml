@@ -1,0 +1,160 @@
+  - alias: Turn on porch light at sunset
+    hide_entity: true
+    trigger:
+    - platform: sun
+      event: sunset
+      offset: "00:30:00"
+    action:
+      service: light.turn_on
+      data:
+        entity_id: light.dimmable_light_1
+        brightness: 255
+
+  - alias: Reduce porch light brightness on schedule
+    hide_entity: true
+    trigger:
+      platform: time
+      at: "22:30:00"
+    action:
+      service: light.turn_on
+      data:
+        entity_id: light.dimmable_light_1
+        brightness: 50
+
+  - alias: Turn off porch light at sunset
+    hide_entity: true
+    trigger:
+      platform: sun
+      event: sunrise
+    action:
+      service: light.turn_off
+      data:
+        entity_id: light.dimmable_light_1
+        
+  - alias: Turn on hall lights when there is movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_034d0c31_1_1280
+      to: 'on'
+    condition:
+      condition: state
+      entity_id: light.hallgroup
+      state: 'off'
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.hall_motion_detect
+    - service: light.turn_on
+      entity_id: light.hallgroup
+
+  - alias: Turn Off Hall lights 2 minutes after last movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_034d0c31_1_1280
+      to: 'off'
+      for:
+        minutes: 2
+    condition:
+      condition: state
+      entity_id: input_boolean.hall_motion_detect
+      state: 'on'
+    action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.hall_motion_detect
+    - service: light.turn_off
+      entity_id: light.hallgroup
+      
+  - alias: Turn on LR lights when there is movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_04140385_1_1280
+      to: 'on'
+    condition:
+      condition: state
+      entity_id: light.lr_group
+      state: 'off'
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.lr_motion_detect
+    - service: light.turn_on
+      entity_id: light.lr_group
+
+  - alias: Turn Off LR lights 2 minutes after last movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_04140385_1_1280
+      to: 'off'
+      for:
+        minutes: 2
+    condition:
+      condition: state
+      entity_id: input_boolean.lr_motion_detect
+      state: 'on'
+    action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.lr_motion_detect
+    - service: light.turn_off
+      entity_id: light.lr_group
+      
+  - alias: Turn on Kitchen lights when there is movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.living_room_sensor_motion
+      to: 'on'
+    condition:
+      condition: state
+      entity_id: light.kitchengroup
+      state: 'off'
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.kitchen_motion_detect
+    - service: light.turn_on
+      entity_id: light.kitchengroup
+
+  - alias: Turn Off Kitchen lights 10 minutes after last movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.living_room_sensor_motion
+      to: 'off'
+      for:
+        minutes: 10
+    condition:
+      condition: state
+      entity_id: input_boolean.kitchen_motion_detect
+      state: 'on'
+    action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.kitchen_motion_detect
+    - service: light.turn_off
+      entity_id: light.kitchengroup
+
+  - alias: Turn on Dining Room lights when there is movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_036bbe13_1_1280
+      to: 'on'
+    condition:
+      condition: state
+      entity_id: light.zooz_zen22_dimmer_v2_level
+      state: 'off'
+    action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.dr_motion_detect
+    - service: light.turn_on
+      entity_id: light.zooz_zen22_dimmer_v2_level
+
+  - alias: Turn Off Dining Room lights 2 minutes after last movement
+    trigger:
+      platform: state
+      entity_id: binary_sensor.lumi_lumi_sensor_motion_aq2_036bbe13_1_1280
+      to: 'off'
+      for:
+        minutes: 2
+    condition:
+      condition: state
+      entity_id: input_boolean.dr_motion_detect
+      state: 'on'
+    action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.dr_motion_detect
+    - service: light.turn_off
+      entity_id: light.zooz_zen22_dimmer_v2_level

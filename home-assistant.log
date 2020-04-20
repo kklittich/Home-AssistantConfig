@@ -1,0 +1,26 @@
+2020-04-17 21:51:46 WARNING (MainThread) [homeassistant.components.automation] The 'hide_entity' option (with value 'True') is deprecated, please remove it from your configuration. This option will become invalid in version 0.110
+2020-04-17 21:51:46 WARNING (MainThread) [homeassistant.components.automation] The 'hide_entity' option (with value 'True') is deprecated, please remove it from your configuration. This option will become invalid in version 0.110
+2020-04-17 21:51:46 WARNING (MainThread) [homeassistant.components.automation] The 'hide_entity' option (with value 'True') is deprecated, please remove it from your configuration. This option will become invalid in version 0.110
+2020-04-17 22:30:00 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities light.dimmable_light_1
+2020-04-18 06:15:08 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities light.dimmable_light_1
+2020-04-18 19:50:39 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities light.dimmable_light_1
+2020-04-18 22:30:00 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities light.dimmable_light_1
+2020-04-19 03:45:47 ERROR (MainThread) [homeassistant.components.hue.sensor_base] Timeout fetching sensor data
+2020-04-19 03:45:47 ERROR (MainThread) [homeassistant.components.hue.light] Timeout fetching light data
+2020-04-19 03:45:53 WARNING (zeroconf-Engine) [zeroconf] Choked at offset 0 while unpacking b''
+2020-04-19 03:45:53 WARNING (zeroconf-Engine) [zeroconf] Exception occurred:
+Traceback (most recent call last):
+  File "/srv/homeassistant/lib/python3.7/site-packages/zeroconf/__init__.py", line 713, in __init__
+    self.read_header()
+  File "/srv/homeassistant/lib/python3.7/site-packages/zeroconf/__init__.py", line 736, in read_header
+    ) = self.unpack(b'!6H')
+  File "/srv/homeassistant/lib/python3.7/site-packages/zeroconf/__init__.py", line 723, in unpack
+    info = struct.unpack(format_, self.data[self.offset : self.offset + length])
+struct.error: unpack requires a buffer of 12 bytes
+2020-04-19 06:13:58 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities light.dimmable_light_1
+2020-04-19 11:39:07 ERROR (MainThread) [aioharmony.hubconnector] 10.0.1.220: Connection timed out for hub 4788898
+2020-04-19 11:44:43 ERROR (MainThread) [aioharmony.hubconnector] 10.0.1.220: Connection timed out for hub 4788898
+2020-04-19 11:48:25 ERROR (MainThread) [aioharmony.hubconnector] 10.0.1.220: Connection timed out for hub 4788898
+2020-04-19 11:54:52 ERROR (MainThread) [aioharmony.hubconnector] 10.0.1.220: Connection timed out for hub 4788898
+2020-04-19 11:58:38 ERROR (MainThread) [aioharmony.hubconnector] 10.0.1.220: Connection timed out for hub 4788898
+2020-04-19 19:51:22 WARNING (MainThread) [homeassistant.helpers.service] Unable to find referenced entities light.dimmable_light_1
